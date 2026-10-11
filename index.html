@@ -1,1814 +1,1885 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#075b41">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#075b41">
 
-  <title>Algeria Export Hub | Connecter l'Algérie au monde</title>
+    <title>Algeria Export Hub | Connecter l'Algérie au monde</title>
 
-  <meta name="description"
+    <meta name="description"
         content="Algeria Export Hub accompagne les opportunités d'exportation et connecte les entreprises algériennes aux marchés internationaux.">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="./logo.png">
-  <link rel="apple-touch-icon" href="./logo.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="apple-touch-icon" href="./logo.png">
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    :root {
-      --green: #075b41;
-      --green-light: #08744e;
-      --gold: #c5a04a;
-      --gold-light: #dfb95c;
-      --ink: #17251f;
-      --muted: #65736c;
-      --cream: #f7f8f4;
-      --white: #ffffff;
-      --whatsapp: #25D366;
-      --whatsapp-dark: #1da851;
-      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
+    <style>
+        :root {
+            --green: #075b41;
+            --green-light: #08744e;
+            --gold: #c5a04a;
+            --gold-light: #dfb95c;
+            --ink: #17251f;
+            --muted: #65736c;
+            --cream: #f7f8f4;
+            --white: #ffffff;
+            --whatsapp: #25D366;
+            --whatsapp-dark: #1da851;
+            --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-      min-height: 100vh;
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-      perspective: 1200px;
-    }
+        body {
+            min-height: 100vh;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+            perspective: 1200px;
+        }
 
-    /* ========================================================
+        /* ========================================================
        ANIMATED LIVING BACKGROUND SCENE (AURORA MESH + NETWORK)
        ======================================================== */
-    .bg-scene {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      overflow: hidden;
-      background: linear-gradient(135deg, #fbfcf8 0%, #edf3eb 50%, #f6f8f3 100%);
-    }
-
-    /* Floating glowing aurora orbs */
-    .bg-orb {
-      position: absolute;
-      border-radius: 50%;
-      will-change: transform;
-      mix-blend-mode: multiply;
-      pointer-events: none;
-    }
-
-    .bg-orb-1 {
-      width: clamp(360px, 46vw, 680px);
-      height: clamp(360px, 46vw, 680px);
-      top: -12%;
-      left: -8%;
-      background: radial-gradient(circle, rgba(7, 91, 65, 0.28) 0%, rgba(7, 91, 65, 0.06) 60%, transparent 80%);
-      filter: blur(80px);
-      animation: orbDrift1 22s ease-in-out infinite alternate;
-    }
-
-    .bg-orb-2 {
-      width: clamp(340px, 44vw, 640px);
-      height: clamp(340px, 44vw, 640px);
-      bottom: -15%;
-      right: -8%;
-      background: radial-gradient(circle, rgba(197, 160, 74, 0.32) 0%, rgba(197, 160, 74, 0.08) 60%, transparent 80%);
-      filter: blur(85px);
-      animation: orbDrift2 26s ease-in-out infinite alternate;
-    }
-
-    .bg-orb-3 {
-      width: clamp(280px, 36vw, 520px);
-      height: clamp(280px, 36vw, 520px);
-      top: 38%;
-      right: 12%;
-      background: radial-gradient(circle, rgba(8, 116, 78, 0.22) 0%, rgba(8, 116, 78, 0.04) 60%, transparent 80%);
-      filter: blur(75px);
-      animation: orbDrift3 20s ease-in-out infinite alternate;
-    }
-
-    .bg-orb-4 {
-      width: clamp(260px, 34vw, 480px);
-      height: clamp(260px, 34vw, 480px);
-      bottom: 22%;
-      left: 10%;
-      background: radial-gradient(circle, rgba(223, 185, 92, 0.26) 0%, rgba(223, 185, 92, 0.05) 60%, transparent 80%);
-      filter: blur(70px);
-      animation: orbDrift4 24s ease-in-out infinite alternate;
-    }
-
-    @keyframes orbDrift1 {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(80px, 70px, 0) scale(1.12); }
-      100% { transform: translate3d(40px, 130px, 0) scale(0.95); }
-    }
-
-    @keyframes orbDrift2 {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(-80px, -80px, 0) scale(1.15); }
-      100% { transform: translate3d(-130px, -40px, 0) scale(0.92); }
-    }
-
-    @keyframes orbDrift3 {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(-60px, 60px, 0) scale(1.08); }
-      100% { transform: translate3d(60px, -70px, 0) scale(0.96); }
-    }
-
-    @keyframes orbDrift4 {
-      0% { transform: translate3d(0, 0, 0) scale(1); }
-      50% { transform: translate3d(70px, -60px, 0) scale(1.14); }
-      100% { transform: translate3d(-50px, 80px, 0) scale(0.90); }
-    }
-
-    /* Subtle tech geometric dots grid */
-    .bg-grid {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(7, 91, 65, 0.08) 1.2px, transparent 1.2px);
-      background-size: 32px 32px;
-      opacity: 0.65;
-      mask-image: radial-gradient(circle at 50% 40%, #000 60%, transparent 95%);
-      -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 60%, transparent 95%);
-    }
-
-    /* Interactive network connection lines canvas */
-    .bg-canvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    /* Animated gradient topline */
-    .topline {
-      height: 7px;
-      background: linear-gradient(
-        90deg,
-        var(--green) 0% 68%,
-        var(--gold) 68% 100%
-      );
-      background-size: 200% 100%;
-      animation: toplineFlow 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes toplineFlow {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    .page {
-      width: calc(100% - 32px);
-      max-width: 1050px;
-      margin: 20px auto;
-    }
-
-    /* Sticky Navigation Header with Scroll Animation */
-
-    .nav {
-      position: sticky;
-      top: 14px;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 24px;
-      padding: 10px 18px;
-      border-radius: 50px;
-      transition: all .35s var(--ease-spring);
-      animation: fadeDown .7s var(--ease-spring) forwards;
-    }
-
-    .nav.nav-scrolled {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(197, 160, 74, 0.35);
-      box-shadow:
-        0 12px 35px rgba(7, 91, 65, 0.14),
-        0 2px 8px rgba(197, 160, 74, 0.08);
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .brand-mini {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--green);
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform .25s ease;
-    }
-
-    .brand-mini:hover {
-      transform: scale(1.02);
-    }
-
-    .brand-mini img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      background: white;
-      border-radius: 50%;
-      border: 1px solid rgba(197,160,74,.4);
-      padding: 3px;
-      transition: transform .35s var(--ease-bounce);
-    }
-
-    .nav.nav-scrolled .brand-mini img {
-      transform: scale(1.08);
-      box-shadow: 0 4px 12px rgba(197, 160, 74, 0.3);
-    }
-
-    .brand-mini:hover img {
-      transform: rotate(8deg) scale(1.12);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .nav-label {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .btn-share {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: white;
-      border: 1px solid #dce7de;
-      color: var(--green);
-      font-size: 14px;
-      cursor: pointer;
-      transition: all .25s var(--ease-spring);
-      box-shadow: 0 4px 12px rgba(7,91,65,.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-share:hover {
-      background: var(--green);
-      color: white;
-      transform: translateY(-2px) rotate(8deg);
-      box-shadow: 0 8px 18px rgba(7,91,65,.22);
-    }
-
-    .btn-share:active {
-      transform: scale(0.92);
-    }
-
-    /* Main card */
-
-    .card {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      padding: clamp(24px, 5vw, 54px);
-      text-align: center;
-      background: rgba(255,255,255,.94);
-      border: 1px solid rgba(7,91,65,.12);
-      border-radius: 30px;
-      box-shadow:
-        0 24px 70px rgba(20,57,42,.12),
-        0 4px 18px rgba(197,160,74,.08);
-      backdrop-filter: blur(12px);
-      animation: cardEnter .9s var(--ease-spring) forwards;
-      transform-style: preserve-3d;
-      transition: transform .3s ease-out, box-shadow .3s ease-out;
-    }
-
-    @keyframes cardEnter {
-      from {
-        opacity: 0;
-        transform: translateY(35px) scale(0.97);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    /* Ambient animated orb decorations inside card */
-    .card::before,
-    .card::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      border-radius: 50%;
-      pointer-events: none;
-      transition: transform .8s ease;
-    }
-
-    .card::before {
-      width: 400px;
-      height: 400px;
-      right: -180px;
-      top: -210px;
-      border: 1px solid rgba(197,160,74,.25);
-      box-shadow:
-        0 0 0 25px rgba(197,160,74,.035),
-        0 0 0 55px rgba(197,160,74,.025);
-      animation: orbFloatInner1 12s ease-in-out infinite alternate;
-    }
-
-    .card::after {
-      width: 320px;
-      height: 320px;
-      left: -190px;
-      bottom: -205px;
-      border: 1px solid rgba(7,91,65,.12);
-      box-shadow:
-        0 0 0 24px rgba(7,91,65,.025),
-        0 0 0 50px rgba(7,91,65,.02);
-      animation: orbFloatInner2 10s ease-in-out infinite alternate;
-    }
-
-    @keyframes orbFloatInner1 {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(-15px, 15px) scale(1.04); }
-    }
-
-    @keyframes orbFloatInner2 {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(15px, -15px) scale(1.05); }
-    }
-
-    /* Main Logo with Scale & Scroll Animation */
-
-    .logo-container {
-      position: relative;
-      margin: 0 auto 24px;
-      width: max-content;
-      transform-origin: center center;
-      transition: transform .25s ease-out, opacity .25s ease-out;
-      will-change: transform;
-    }
-
-    .logo-wrap {
-      display: grid;
-      place-items: center;
-      width: 154px;
-      height: 154px;
-      padding: 12px;
-      background: white;
-      border: 2px solid rgba(197,160,74,.75);
-      border-radius: 50%;
-      box-shadow:
-        0 12px 35px rgba(7,91,65,.14),
-        0 0 0 6px rgba(197,160,74,.12);
-      position: relative;
-      animation: floatLogo 5s ease-in-out infinite, logoBreathe 6s ease-in-out infinite alternate;
-      cursor: pointer;
-      transition: all .35s var(--ease-bounce);
-    }
-
-    /* Breathing scale pulsation */
-    @keyframes logoBreathe {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(1.03);
-      }
-    }
-
-    /* Interactive pop click */
-    .logo-wrap.logo-pop {
-      animation: logoPopClick .65s var(--ease-bounce) !important;
-    }
-
-    @keyframes logoPopClick {
-      0% { transform: scale(1); }
-      40% { transform: scale(1.18) rotate(8deg); }
-      75% { transform: scale(0.95) rotate(-3deg); }
-      100% { transform: scale(1) rotate(0); }
-    }
-
-    /* Animated gradient halo ring */
-    .logo-wrap::before {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      background: conic-gradient(
-        from 0deg,
-        rgba(197,160,74,.55),
-        rgba(7,91,65,.35),
-        rgba(197,160,74,.55)
-      );
-      filter: blur(8px);
-      z-index: -1;
-      animation: rotateRing 8s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes rotateRing {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .logo-wrap:hover {
-      transform: translateY(-6px) scale(1.06);
-      box-shadow:
-        0 20px 48px rgba(7,91,65,.24),
-        0 0 0 8px rgba(197,160,74,.22);
-    }
-
-    .logo {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 50%;
-      transition: transform .4s ease;
-    }
-
-    .logo-wrap:hover .logo {
-      transform: scale(1.05);
-    }
-
-    @keyframes floatLogo {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    /* CONTINUOUS SCROLLING LOGO MARQUEE (SCROLL ANIMATION) */
-
-    .logo-marquee-section {
-      width: 100%;
-      max-width: 660px;
-      margin: 18px auto 26px;
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(
-        90deg,
-        rgba(7,91,65,.03) 0%,
-        rgba(197,160,74,.06) 50%,
-        rgba(7,91,65,.03) 100%
-      );
-      border-top: 1px solid rgba(197,160,74,.25);
-      border-bottom: 1px solid rgba(197,160,74,.25);
-      border-radius: 14px;
-      padding: 10px 0;
-      mask-image: linear-gradient(
-        90deg,
-        transparent,
-        #000 12%,
-        #000 88%,
-        transparent
-      );
-      -webkit-mask-image: linear-gradient(
-        90deg,
-        transparent,
-        #000 12%,
-        #000 88%,
-        transparent
-      );
-    }
-
-    .marquee-track {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      width: max-content;
-      animation: scrollMarquee 20s linear infinite;
-      will-change: transform;
-    }
-
-    .marquee-track:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes scrollMarquee {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .marquee-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 4px 12px;
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid rgba(197, 160, 74, 0.25);
-      border-radius: 50px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--green);
-      transition: transform .25s ease, background .25s ease;
-      cursor: default;
-    }
-
-    .marquee-badge:hover {
-      background: white;
-      transform: scale(1.05);
-      border-color: var(--gold);
-    }
-
-    .marquee-logo-thumb {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      background: white;
-      border-radius: 50%;
-      border: 1px solid rgba(197, 160, 74, 0.5);
-      padding: 2px;
-    }
-
-    .marquee-badge i {
-      color: var(--gold);
-      font-size: 11px;
-    }
-
-    /* Introduction with cascading entrance */
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 9px 18px;
-      color: var(--green);
-      background: #eaf3ed;
-      border: 1px solid #d4e5d9;
-      border-radius: 50px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: all .25s ease;
-    }
-
-    .eyebrow:hover {
-      background: #dff0e4;
-      border-color: var(--gold);
-      transform: translateY(-1px);
-    }
-
-    .eyebrow i {
-      animation: globeSpin 10s linear infinite;
-      display: inline-block;
-    }
-
-    @keyframes globeSpin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    h1 {
-      max-width: 720px;
-      margin: 20px auto 14px;
-      color: var(--green);
-      font-size: clamp(30px, 5vw, 52px);
-      line-height: 1.15;
-      letter-spacing: -1.2px;
-      font-weight: 800;
-    }
-
-    h1 span {
-      color: var(--gold);
-      background: linear-gradient(135deg, var(--gold) 0%, #dfb95c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-      transition: transform .3s ease;
-    }
-
-    h1:hover span {
-      transform: scale(1.02);
-    }
-
-    .subtitle {
-      max-width: 620px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.8;
-      font-weight: 450;
-    }
-
-    /* Main buttons */
-
-    .actions {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 13px;
-      max-width: 640px;
-      margin: 32px auto;
-    }
-
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      padding: 15px 18px;
-      border: 1px solid transparent;
-      border-radius: 14px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 750;
-      transition: all .28s var(--ease-spring);
-      cursor: pointer;
-      font-family: inherit;
-      position: relative;
-      overflow: hidden;
-      user-select: none;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(7,91,65,.16);
-    }
-
-    .btn:active {
-      transform: scale(0.96) translateY(0);
-      box-shadow: 0 4px 10px rgba(7,91,65,.12);
-    }
-
-    /* Ripple effect container */
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,.45);
-      transform: scale(0);
-      animation: rippleAnim .6s linear;
-      pointer-events: none;
-    }
-
-    @keyframes rippleAnim {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-
-    /* Hero button: Enregistrer dans les contacts */
-    .btn-vcard {
-      grid-column: 1 / -1;
-      color: white;
-      background: linear-gradient(135deg, var(--green) 0%, #0a8157 100%);
-      border: 1.5px solid rgba(197,160,74,.55);
-      font-size: 15.5px;
-      padding: 18px 24px;
-      box-shadow:
-        0 10px 28px rgba(7,91,65,.26),
-        0 2px 8px rgba(197,160,74,.2);
-      letter-spacing: .3px;
-    }
-
-    .btn-vcard::after {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        60deg,
-        transparent 30%,
-        rgba(255,255,255,.25) 50%,
-        transparent 70%
-      );
-      transform: rotate(25deg);
-      animation: shimmer 4s infinite;
-    }
-
-    @keyframes shimmer {
-      0% { transform: translateX(-100%) rotate(25deg); }
-      20%, 100% { transform: translateX(100%) rotate(25deg); }
-    }
-
-    .btn-vcard:hover {
-      background: linear-gradient(135deg, #096d4a 0%, var(--green) 100%);
-      box-shadow:
-        0 16px 36px rgba(7,91,65,.35),
-        0 0 20px rgba(197,160,74,.3);
-      transform: translateY(-4px) scale(1.01);
-    }
-
-    .btn-vcard i {
-      font-size: 18px;
-      animation: cardIconBounce 2.5s ease-in-out infinite;
-    }
-
-    @keyframes cardIconBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-2px); }
-    }
-
-    /* WhatsApp button */
-    .btn-whatsapp {
-      color: white;
-      background: var(--whatsapp);
-      position: relative;
-    }
-
-    .btn-whatsapp:hover {
-      background: var(--whatsapp-dark);
-      box-shadow: 0 12px 28px rgba(37,211,102,.38);
-      transform: translateY(-3px);
-    }
-
-    .btn-whatsapp i {
-      font-size: 17px;
-    }
-
-    .btn-primary {
-      color: white;
-      background: var(--green);
-    }
-
-    .btn-primary:hover {
-      background: var(--green-light);
-      box-shadow: 0 12px 25px rgba(7,91,65,.22);
-    }
-
-    .btn-secondary {
-      color: var(--green);
-      background: white;
-      border-color: #d8e3da;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--gold);
-      background: #fafcf9;
-      color: var(--green-light);
-    }
-
-    .btn-gold {
-      color: var(--ink);
-      background: var(--gold);
-    }
-
-    .btn-gold:hover {
-      background: var(--gold-light);
-      box-shadow: 0 12px 25px rgba(197,160,74,.35);
-    }
-
-    /* Contact section */
-
-    .rule {
-      height: 1px;
-      margin: 14px 0 28px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d9e3da,
-        transparent
-      );
-      transform-origin: center;
-      transition: transform .8s var(--ease-spring);
-    }
-
-    .section-title {
-      margin-bottom: 20px;
-      color: var(--gold);
-      font-size: 11px;
-      font-weight: 850;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      text-align: left;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-      padding: 16px 18px;
-      background: #f8faf7;
-      border: 1px solid #e6ece6;
-      border-radius: 18px;
-      text-decoration: none;
-      color: var(--ink);
-      transition: all .28s var(--ease-spring);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-item:hover {
-      border-color: rgba(197,160,74,.7);
-      background: #ffffff;
-      transform: translateY(-3px);
-      box-shadow:
-        0 10px 24px rgba(7,91,65,.1),
-        0 2px 6px rgba(197,160,74,.08);
-    }
-
-    .contact-item:active {
-      transform: scale(0.97) translateY(0);
-    }
-
-    .contact-icon {
-      display: grid;
-      place-items: center;
-      flex: 0 0 42px;
-      width: 42px;
-      height: 42px;
-      color: var(--green);
-      background: #e7f1e9;
-      border-radius: 12px;
-      font-size: 16px;
-      transition: all .3s var(--ease-bounce);
-    }
-
-    .contact-item:hover .contact-icon {
-      background: var(--green);
-      color: white;
-      transform: scale(1.1) rotate(-6deg);
-      box-shadow: 0 6px 14px rgba(7,91,65,.25);
-    }
-
-    .contact-body {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .contact-item small {
-      display: block;
-      margin: 0 0 3px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .5px;
-    }
-
-    .contact-item span,
-    .contact-item address {
-      display: block;
-      color: var(--ink);
-      font-size: 13.5px;
-      font-weight: 600;
-      line-height: 1.5;
-      text-decoration: none;
-      overflow-wrap: anywhere;
-      font-style: normal;
-      transition: color .2s ease;
-    }
-
-    .contact-item:hover span,
-    .contact-item:hover address {
-      color: var(--green);
-    }
-
-    .contact-action-icon {
-      font-size: 12px;
-      color: var(--muted);
-      opacity: 0.5;
-      transition: all .25s var(--ease-spring);
-    }
-
-    .contact-item:hover .contact-action-icon {
-      color: var(--green);
-      opacity: 1;
-      transform: translateX(4px);
-    }
-
-    /* Social media */
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 30px 0 10px;
-    }
-
-    .social {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 12px 19px;
-      color: var(--green);
-      background: white;
-      border: 1px solid #dce7de;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 750;
-      transition: all .28s var(--ease-spring);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .social:hover {
-      color: white;
-      background: var(--green);
-      border-color: var(--green);
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 10px 22px rgba(7,91,65,.18);
-    }
-
-    .social:hover i {
-      transform: scale(1.15);
-    }
-
-    .social i {
-      transition: transform .25s var(--ease-bounce);
-    }
-
-    .social:active {
-      transform: scale(0.95);
-    }
-
-    /* Toast notification */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px) scale(0.9);
-      background: var(--ink);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      box-shadow: 0 12px 35px rgba(0,0,0,.3);
-      opacity: 0;
-      pointer-events: none;
-      transition: all .35s var(--ease-spring);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .toast.show {
-      transform: translateX(-50%) translateY(0) scale(1);
-      opacity: 1;
-    }
-
-    .toast i {
-      color: var(--gold);
-      font-size: 15px;
-    }
-
-    /* Footer */
-
-    .footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 24px 4px 0;
-      color: #758178;
-      font-size: 11px;
-      animation: fadeIn .8s var(--ease-spring) 1.2s both;
-    }
-
-    .footer strong {
-      color: var(--green);
-    }
-
-    .agency-link {
-      color: var(--green);
-      text-decoration: none;
-      font-weight: 750;
-      transition: all .25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      border-bottom: 1px dotted rgba(7, 91, 65, 0.45);
-      padding-bottom: 1px;
-    }
-
-    .agency-link:hover {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-      transform: translateY(-1px);
-    }
-
-    .footer .heart {
-      color: var(--gold);
-      animation: heartbeat 2s ease-in-out infinite;
-      display: inline-block;
-    }
-
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      14% { transform: scale(1.22); }
-      28% { transform: scale(1); }
-      42% { transform: scale(1.15); }
-      70% { transform: scale(1); }
-    }
-
-    /* Staggered sequential reveals */
-
-    .anim-stagger {
-      opacity: 0;
-      transform: translateY(22px);
-      animation: staggerIn .8s var(--ease-spring) forwards;
-    }
-
-    @keyframes staggerIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Sequential animation delays */
-    .d-1 { animation-delay: .08s; }
-    .d-2 { animation-delay: .16s; }
-    .d-3 { animation-delay: .24s; }
-    .d-4 { animation-delay: .32s; }
-    .d-5 { animation-delay: .40s; }
-    .d-6 { animation-delay: .48s; }
-    .d-7 { animation-delay: .56s; }
-    .d-8 { animation-delay: .64s; }
-    .d-9 { animation-delay: .72s; }
-    .d-10 { animation-delay: .80s; }
-    .d-11 { animation-delay: .88s; }
-    .d-12 { animation-delay: .96s; }
-    .d-13 { animation-delay: 1.04s; }
-    .d-14 { animation-delay: 1.12s; }
-
-    /* Responsive adjustments */
-
-    @media (max-width: 600px) {
-      .page {
-        width: calc(100% - 20px);
-        margin: 12px auto;
-      }
-
-      .nav {
-        padding: 8px 12px;
-      }
-
-      .brand-mini {
-        font-size: 12px;
-      }
-
-      .brand-mini img {
-        width: 36px;
-        height: 36px;
-      }
-
-      .nav-label {
-        display: none;
-      }
-
-      .card {
-        padding: 26px 16px;
-        border-radius: 24px;
-      }
-
-      .logo-wrap {
-        width: 125px;
-        height: 125px;
-        padding: 10px;
-      }
-
-      .logo-marquee-section {
-        margin: 14px auto 20px;
-      }
-
-      .marquee-badge {
-        font-size: 10px;
-        letter-spacing: 1px;
-        padding: 3px 10px;
-      }
-
-      .marquee-logo-thumb {
-        width: 20px;
-        height: 20px;
-      }
-
-      .subtitle {
-        font-size: 14px;
-        line-height: 1.75;
-      }
-
-      .actions {
-        grid-template-columns: 1fr;
-        margin: 22px auto;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .socials {
-        gap: 8px;
-      }
-
-      .social {
-        padding: 11px 14px;
-        font-size: 12.5px;
-      }
-
-      .footer {
-        flex-direction: column;
-        text-align: center;
-        line-height: 1.8;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation: none !important;
-        scroll-behavior: auto !important;
-        transition: none !important;
-      }
-
-      .anim-stagger,
-      .card,
-      .nav,
-      .footer,
-      .marquee-track,
-      .logo-container,
-      .bg-orb {
-        opacity: 1 !important;
-        transform: none !important;
-        animation: none !important;
-      }
-
-      .bg-canvas {
-        display: none !important;
-      }
-    }
-  </style>
+        .bg-scene {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fbfcf8 0%, #edf3eb 50%, #f6f8f3 100%);
+        }
+
+        /* Floating glowing aurora orbs */
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            will-change: transform;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+
+        .bg-orb-1 {
+            width: clamp(360px, 46vw, 680px);
+            height: clamp(360px, 46vw, 680px);
+            top: -12%;
+            left: -8%;
+            background: radial-gradient(circle, rgba(7, 91, 65, 0.28) 0%, rgba(7, 91, 65, 0.06) 60%, transparent 80%);
+            filter: blur(80px);
+            animation: orbDrift1 22s ease-in-out infinite alternate;
+        }
+
+        .bg-orb-2 {
+            width: clamp(340px, 44vw, 640px);
+            height: clamp(340px, 44vw, 640px);
+            bottom: -15%;
+            right: -8%;
+            background: radial-gradient(circle, rgba(197, 160, 74, 0.32) 0%, rgba(197, 160, 74, 0.08) 60%, transparent 80%);
+            filter: blur(85px);
+            animation: orbDrift2 26s ease-in-out infinite alternate;
+        }
+
+        .bg-orb-3 {
+            width: clamp(280px, 36vw, 520px);
+            height: clamp(280px, 36vw, 520px);
+            top: 38%;
+            right: 12%;
+            background: radial-gradient(circle, rgba(8, 116, 78, 0.22) 0%, rgba(8, 116, 78, 0.04) 60%, transparent 80%);
+            filter: blur(75px);
+            animation: orbDrift3 20s ease-in-out infinite alternate;
+        }
+
+        .bg-orb-4 {
+            width: clamp(260px, 34vw, 480px);
+            height: clamp(260px, 34vw, 480px);
+            bottom: 22%;
+            left: 10%;
+            background: radial-gradient(circle, rgba(223, 185, 92, 0.26) 0%, rgba(223, 185, 92, 0.05) 60%, transparent 80%);
+            filter: blur(70px);
+            animation: orbDrift4 24s ease-in-out infinite alternate;
+        }
+
+        @keyframes orbDrift1 {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(80px, 70px, 0) scale(1.12);
+            }
+
+            100% {
+                transform: translate3d(40px, 130px, 0) scale(0.95);
+            }
+        }
+
+        @keyframes orbDrift2 {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(-80px, -80px, 0) scale(1.15);
+            }
+
+            100% {
+                transform: translate3d(-130px, -40px, 0) scale(0.92);
+            }
+        }
+
+        @keyframes orbDrift3 {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(-60px, 60px, 0) scale(1.08);
+            }
+
+            100% {
+                transform: translate3d(60px, -70px, 0) scale(0.96);
+            }
+        }
+
+        @keyframes orbDrift4 {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(70px, -60px, 0) scale(1.14);
+            }
+
+            100% {
+                transform: translate3d(-50px, 80px, 0) scale(0.90);
+            }
+        }
+
+        /* Subtle tech geometric dots grid */
+        .bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(7, 91, 65, 0.08) 1.2px, transparent 1.2px);
+            background-size: 32px 32px;
+            opacity: 0.65;
+            mask-image: radial-gradient(circle at 50% 40%, #000 60%, transparent 95%);
+            -webkit-mask-image: radial-gradient(circle at 50% 40%, #000 60%, transparent 95%);
+        }
+
+        /* Interactive network connection lines canvas */
+        .bg-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        /* Animated gradient topline */
+        .topline {
+            height: 7px;
+            background: linear-gradient(90deg,
+                    var(--green) 0% 68%,
+                    var(--gold) 68% 100%);
+            background-size: 200% 100%;
+            animation: toplineFlow 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes toplineFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .page {
+            width: calc(100% - 32px);
+            max-width: 1050px;
+            margin: 20px auto;
+        }
+
+        /* Sticky Navigation Header with Scroll Animation */
+
+        .nav {
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 24px;
+            padding: 10px 18px;
+            border-radius: 50px;
+            transition: all .35s var(--ease-spring);
+            animation: fadeDown .7s var(--ease-spring) forwards;
+        }
+
+        .nav.nav-scrolled {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(197, 160, 74, 0.35);
+            box-shadow:
+                0 12px 35px rgba(7, 91, 65, 0.14),
+                0 2px 8px rgba(197, 160, 74, 0.08);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--green);
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform .25s ease;
+        }
+
+        .brand-mini:hover {
+            transform: scale(1.02);
+        }
+
+        .brand-mini img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 160, 74, .4);
+            padding: 3px;
+            transition: transform .35s var(--ease-bounce);
+        }
+
+        .nav.nav-scrolled .brand-mini img {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(197, 160, 74, 0.3);
+        }
+
+        .brand-mini:hover img {
+            transform: rotate(8deg) scale(1.12);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-label {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .btn-share {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #dce7de;
+            color: var(--green);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all .25s var(--ease-spring);
+            box-shadow: 0 4px 12px rgba(7, 91, 65, .08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-share:hover {
+            background: var(--green);
+            color: white;
+            transform: translateY(-2px) rotate(8deg);
+            box-shadow: 0 8px 18px rgba(7, 91, 65, .22);
+        }
+
+        .btn-share:active {
+            transform: scale(0.92);
+        }
+
+        /* Main card */
+
+        .card {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: clamp(24px, 5vw, 54px);
+            text-align: center;
+            background: rgba(255, 255, 255, .94);
+            border: 1px solid rgba(7, 91, 65, .12);
+            border-radius: 30px;
+            box-shadow:
+                0 24px 70px rgba(20, 57, 42, .12),
+                0 4px 18px rgba(197, 160, 74, .08);
+            backdrop-filter: blur(12px);
+            animation: cardEnter .9s var(--ease-spring) forwards;
+            transform-style: preserve-3d;
+            transition: transform .3s ease-out, box-shadow .3s ease-out;
+        }
+
+        @keyframes cardEnter {
+            from {
+                opacity: 0;
+                transform: translateY(35px) scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Ambient animated orb decorations inside card */
+        .card::before,
+        .card::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform .8s ease;
+        }
+
+        .card::before {
+            width: 400px;
+            height: 400px;
+            right: -180px;
+            top: -210px;
+            border: 1px solid rgba(197, 160, 74, .25);
+            box-shadow:
+                0 0 0 25px rgba(197, 160, 74, .035),
+                0 0 0 55px rgba(197, 160, 74, .025);
+            animation: orbFloatInner1 12s ease-in-out infinite alternate;
+        }
+
+        .card::after {
+            width: 320px;
+            height: 320px;
+            left: -190px;
+            bottom: -205px;
+            border: 1px solid rgba(7, 91, 65, .12);
+            box-shadow:
+                0 0 0 24px rgba(7, 91, 65, .025),
+                0 0 0 50px rgba(7, 91, 65, .02);
+            animation: orbFloatInner2 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes orbFloatInner1 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(-15px, 15px) scale(1.04);
+            }
+        }
+
+        @keyframes orbFloatInner2 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(15px, -15px) scale(1.05);
+            }
+        }
+
+        /* Main Logo with Scale & Scroll Animation */
+
+        .logo-container {
+            position: relative;
+            margin: 0 auto 24px;
+            width: max-content;
+            transform-origin: center center;
+            transition: transform .25s ease-out, opacity .25s ease-out;
+            will-change: transform;
+        }
+
+        .logo-wrap {
+            display: grid;
+            place-items: center;
+            width: 154px;
+            height: 154px;
+            padding: 12px;
+            background: white;
+            border: 2px solid rgba(197, 160, 74, .75);
+            border-radius: 50%;
+            box-shadow:
+                0 12px 35px rgba(7, 91, 65, .14),
+                0 0 0 6px rgba(197, 160, 74, .12);
+            position: relative;
+            animation: floatLogo 5s ease-in-out infinite, logoBreathe 6s ease-in-out infinite alternate;
+            cursor: pointer;
+            transition: all .35s var(--ease-bounce);
+        }
+
+        /* Breathing scale pulsation */
+        @keyframes logoBreathe {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.03);
+            }
+        }
+
+        /* Interactive pop click */
+        .logo-wrap.logo-pop {
+            animation: logoPopClick .65s var(--ease-bounce) !important;
+        }
+
+        @keyframes logoPopClick {
+            0% {
+                transform: scale(1);
+            }
+
+            40% {
+                transform: scale(1.18) rotate(8deg);
+            }
+
+            75% {
+                transform: scale(0.95) rotate(-3deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0);
+            }
+        }
+
+        /* Animated gradient halo ring */
+        .logo-wrap::before {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg,
+                    rgba(197, 160, 74, .55),
+                    rgba(7, 91, 65, .35),
+                    rgba(197, 160, 74, .55));
+            filter: blur(8px);
+            z-index: -1;
+            animation: rotateRing 8s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes rotateRing {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo-wrap:hover {
+            transform: translateY(-6px) scale(1.06);
+            box-shadow:
+                0 20px 48px rgba(7, 91, 65, .24),
+                0 0 0 8px rgba(197, 160, 74, .22);
+        }
+
+        .logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+            transition: transform .4s ease;
+        }
+
+        .logo-wrap:hover .logo {
+            transform: scale(1.05);
+        }
+
+        @keyframes floatLogo {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* CONTINUOUS SCROLLING LOGO MARQUEE (SCROLL ANIMATION) */
+
+        .logo-marquee-section {
+            width: 100%;
+            max-width: 660px;
+            margin: 18px auto 26px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(90deg,
+                    rgba(7, 91, 65, .03) 0%,
+                    rgba(197, 160, 74, .06) 50%,
+                    rgba(7, 91, 65, .03) 100%);
+            border-top: 1px solid rgba(197, 160, 74, .25);
+            border-bottom: 1px solid rgba(197, 160, 74, .25);
+            border-radius: 14px;
+            padding: 10px 0;
+            mask-image: linear-gradient(90deg,
+                    transparent,
+                    #000 12%,
+                    #000 88%,
+                    transparent);
+            -webkit-mask-image: linear-gradient(90deg,
+                    transparent,
+                    #000 12%,
+                    #000 88%,
+                    transparent);
+        }
+
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            width: max-content;
+            animation: scrollMarquee 20s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollMarquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 4px 12px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(197, 160, 74, 0.25);
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--green);
+            transition: transform .25s ease, background .25s ease;
+            cursor: default;
+        }
+
+        .marquee-badge:hover {
+            background: white;
+            transform: scale(1.05);
+            border-color: var(--gold);
+        }
+
+        .marquee-logo-thumb {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 160, 74, 0.5);
+            padding: 2px;
+        }
+
+        .marquee-badge i {
+            color: var(--gold);
+            font-size: 11px;
+        }
+
+        /* Introduction with cascading entrance */
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 9px 18px;
+            color: var(--green);
+            background: #eaf3ed;
+            border: 1px solid #d4e5d9;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all .25s ease;
+        }
+
+        .eyebrow:hover {
+            background: #dff0e4;
+            border-color: var(--gold);
+            transform: translateY(-1px);
+        }
+
+        .eyebrow i {
+            animation: globeSpin 10s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes globeSpin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        h1 {
+            max-width: 720px;
+            margin: 20px auto 14px;
+            color: var(--green);
+            font-size: clamp(30px, 5vw, 52px);
+            line-height: 1.15;
+            letter-spacing: -1.2px;
+            font-weight: 800;
+        }
+
+        h1 span {
+            color: var(--gold);
+            background: linear-gradient(135deg, var(--gold) 0%, #dfb95c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            transition: transform .3s ease;
+        }
+
+        h1:hover span {
+            transform: scale(1.02);
+        }
+
+        .subtitle {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 450;
+        }
+
+        /* Main buttons */
+
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 13px;
+            max-width: 640px;
+            margin: 32px auto;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 11px;
+            padding: 15px 18px;
+            border: 1px solid transparent;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 750;
+            transition: all .28s var(--ease-spring);
+            cursor: pointer;
+            font-family: inherit;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(7, 91, 65, .16);
+        }
+
+        .btn:active {
+            transform: scale(0.96) translateY(0);
+            box-shadow: 0 4px 10px rgba(7, 91, 65, .12);
+        }
+
+        /* Ripple effect container */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .45);
+            transform: scale(0);
+            animation: rippleAnim .6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleAnim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Hero button: Enregistrer dans les contacts */
+        .btn-vcard {
+            grid-column: 1 / -1;
+            color: white;
+            background: linear-gradient(135deg, var(--green) 0%, #0a8157 100%);
+            border: 1.5px solid rgba(197, 160, 74, .55);
+            font-size: 15.5px;
+            padding: 18px 24px;
+            box-shadow:
+                0 10px 28px rgba(7, 91, 65, .26),
+                0 2px 8px rgba(197, 160, 74, .2);
+            letter-spacing: .3px;
+        }
+
+        .btn-vcard::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg,
+                    transparent 30%,
+                    rgba(255, 255, 255, .25) 50%,
+                    transparent 70%);
+            transform: rotate(25deg);
+            animation: shimmer 4s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) rotate(25deg);
+            }
+
+            20%,
+            100% {
+                transform: translateX(100%) rotate(25deg);
+            }
+        }
+
+        .btn-vcard:hover {
+            background: linear-gradient(135deg, #096d4a 0%, var(--green) 100%);
+            box-shadow:
+                0 16px 36px rgba(7, 91, 65, .35),
+                0 0 20px rgba(197, 160, 74, .3);
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        .btn-vcard i {
+            font-size: 18px;
+            animation: cardIconBounce 2.5s ease-in-out infinite;
+        }
+
+        @keyframes cardIconBounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* WhatsApp button */
+        .btn-whatsapp {
+            color: white;
+            background: var(--whatsapp);
+            position: relative;
+        }
+
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-dark);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, .38);
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp i {
+            font-size: 17px;
+        }
+
+        .btn-primary {
+            color: white;
+            background: var(--green);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-light);
+            box-shadow: 0 12px 25px rgba(7, 91, 65, .22);
+        }
+
+        .btn-secondary {
+            color: var(--green);
+            background: white;
+            border-color: #d8e3da;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            background: #fafcf9;
+            color: var(--green-light);
+        }
+
+        .btn-gold {
+            color: var(--ink);
+            background: var(--gold);
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            box-shadow: 0 12px 25px rgba(197, 160, 74, .35);
+        }
+
+        /* Contact section */
+
+        .rule {
+            height: 1px;
+            margin: 14px 0 28px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    #d9e3da,
+                    transparent);
+            transform-origin: center;
+            transition: transform .8s var(--ease-spring);
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 850;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            text-align: left;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+            padding: 16px 18px;
+            background: #f8faf7;
+            border: 1px solid #e6ece6;
+            border-radius: 18px;
+            text-decoration: none;
+            color: var(--ink);
+            transition: all .28s var(--ease-spring);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item:hover {
+            border-color: rgba(197, 160, 74, .7);
+            background: #ffffff;
+            transform: translateY(-3px);
+            box-shadow:
+                0 10px 24px rgba(7, 91, 65, .1),
+                0 2px 6px rgba(197, 160, 74, .08);
+        }
+
+        .contact-item:active {
+            transform: scale(0.97) translateY(0);
+        }
+
+        .contact-icon {
+            display: grid;
+            place-items: center;
+            flex: 0 0 42px;
+            width: 42px;
+            height: 42px;
+            color: var(--green);
+            background: #e7f1e9;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all .3s var(--ease-bounce);
+        }
+
+        .contact-item:hover .contact-icon {
+            background: var(--green);
+            color: white;
+            transform: scale(1.1) rotate(-6deg);
+            box-shadow: 0 6px 14px rgba(7, 91, 65, .25);
+        }
+
+        .contact-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .contact-item small {
+            display: block;
+            margin: 0 0 3px;
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .contact-item span,
+        .contact-item address {
+            display: block;
+            color: var(--ink);
+            font-size: 13.5px;
+            font-weight: 600;
+            line-height: 1.5;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+            font-style: normal;
+            transition: color .2s ease;
+        }
+
+        .contact-item:hover span,
+        .contact-item:hover address {
+            color: var(--green);
+        }
+
+        .contact-action-icon {
+            font-size: 12px;
+            color: var(--muted);
+            opacity: 0.5;
+            transition: all .25s var(--ease-spring);
+        }
+
+        .contact-item:hover .contact-action-icon {
+            color: var(--green);
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        /* Social media */
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0 10px;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 19px;
+            color: var(--green);
+            background: white;
+            border: 1px solid #dce7de;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 750;
+            transition: all .28s var(--ease-spring);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social:hover {
+            color: white;
+            background: var(--green);
+            border-color: var(--green);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 22px rgba(7, 91, 65, .18);
+        }
+
+        .social:hover i {
+            transform: scale(1.15);
+        }
+
+        .social i {
+            transition: transform .25s var(--ease-bounce);
+        }
+
+        .social:active {
+            transform: scale(0.95);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px) scale(0.9);
+            background: var(--ink);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .3);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .35s var(--ease-spring);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .toast i {
+            color: var(--gold);
+            font-size: 15px;
+        }
+
+        /* Footer */
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 24px 4px 0;
+            color: #758178;
+            font-size: 11px;
+            animation: fadeIn .8s var(--ease-spring) 1.2s both;
+        }
+
+        .footer strong {
+            color: var(--green);
+        }
+
+        .agency-link {
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 750;
+            transition: all .25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            border-bottom: 1px dotted rgba(7, 91, 65, 0.45);
+            padding-bottom: 1px;
+        }
+
+        .agency-link:hover {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+            transform: translateY(-1px);
+        }
+
+        .footer .heart {
+            color: var(--gold);
+            animation: heartbeat 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            14% {
+                transform: scale(1.22);
+            }
+
+            28% {
+                transform: scale(1);
+            }
+
+            42% {
+                transform: scale(1.15);
+            }
+
+            70% {
+                transform: scale(1);
+            }
+        }
+
+        /* Staggered sequential reveals */
+
+        .anim-stagger {
+            opacity: 0;
+            transform: translateY(22px);
+            animation: staggerIn .8s var(--ease-spring) forwards;
+        }
+
+        @keyframes staggerIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Sequential animation delays */
+        .d-1 {
+            animation-delay: .08s;
+        }
+
+        .d-2 {
+            animation-delay: .16s;
+        }
+
+        .d-3 {
+            animation-delay: .24s;
+        }
+
+        .d-4 {
+            animation-delay: .32s;
+        }
+
+        .d-5 {
+            animation-delay: .40s;
+        }
+
+        .d-6 {
+            animation-delay: .48s;
+        }
+
+        .d-7 {
+            animation-delay: .56s;
+        }
+
+        .d-8 {
+            animation-delay: .64s;
+        }
+
+        .d-9 {
+            animation-delay: .72s;
+        }
+
+        .d-10 {
+            animation-delay: .80s;
+        }
+
+        .d-11 {
+            animation-delay: .88s;
+        }
+
+        .d-12 {
+            animation-delay: .96s;
+        }
+
+        .d-13 {
+            animation-delay: 1.04s;
+        }
+
+        .d-14 {
+            animation-delay: 1.12s;
+        }
+
+        /* Responsive adjustments */
+
+        @media (max-width: 600px) {
+            .page {
+                width: calc(100% - 20px);
+                margin: 12px auto;
+            }
+
+            .nav {
+                padding: 8px 12px;
+            }
+
+            .brand-mini {
+                font-size: 12px;
+            }
+
+            .brand-mini img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .nav-label {
+                display: none;
+            }
+
+            .card {
+                padding: 26px 16px;
+                border-radius: 24px;
+            }
+
+            .logo-wrap {
+                width: 125px;
+                height: 125px;
+                padding: 10px;
+            }
+
+            .logo-marquee-section {
+                margin: 14px auto 20px;
+            }
+
+            .marquee-badge {
+                font-size: 10px;
+                letter-spacing: 1px;
+                padding: 3px 10px;
+            }
+
+            .marquee-logo-thumb {
+                width: 20px;
+                height: 20px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+            .actions {
+                grid-template-columns: 1fr;
+                margin: 22px auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .socials {
+                gap: 8px;
+            }
+
+            .social {
+                padding: 11px 14px;
+                font-size: 12.5px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+                line-height: 1.8;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+
+            .anim-stagger,
+            .card,
+            .nav,
+            .footer,
+            .marquee-track,
+            .logo-container,
+            .bg-orb {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+
+            .bg-canvas {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Animated Background System (Aurora Orbs + Grid + International Network Particles) -->
-  <div class="bg-scene" aria-hidden="true">
-    <div class="bg-orb bg-orb-1"></div>
-    <div class="bg-orb bg-orb-2"></div>
-    <div class="bg-orb bg-orb-3"></div>
-    <div class="bg-orb bg-orb-4"></div>
-    <div class="bg-grid"></div>
-    <canvas id="networkCanvas" class="bg-canvas"></canvas>
-  </div>
+    <!-- Animated Background System (Aurora Orbs + Grid + International Network Particles) -->
+    <div class="bg-scene" aria-hidden="true">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+        <div class="bg-orb bg-orb-4"></div>
+        <div class="bg-grid"></div>
+        <canvas id="networkCanvas" class="bg-canvas"></canvas>
+    </div>
 
-  <div class="topline"></div>
+    <div class="topline"></div>
 
-  <main class="page">
+    <main class="page">
 
-    <!-- Header Navigation (with scroll-sticky effect) -->
-    <header class="nav" id="stickyNav">
-      <a href="https://algeriaexporthub.com/" class="brand-mini" target="_blank" rel="noopener noreferrer">
-        <img src="./logo.png" alt="Algeria Export Hub Logo" id="navLogo">
-        <span>Algeria Export Hub</span>
-      </a>
+        <!-- Header Navigation (with scroll-sticky effect) -->
+        <header class="nav" id="stickyNav">
+            <a href="https://algeriaexporthub.com/" class="brand-mini" target="_blank" rel="noopener noreferrer">
+                <img src="./logo.png" alt="Algeria Export Hub Logo" id="navLogo">
+                <span>Algeria Export Hub</span>
+            </a>
 
-      <div class="nav-actions">
-        <div class="nav-label">
-          Export · Connect · Grow
-        </div>
-        <button class="btn-share" id="shareBtn" title="Partager cette carte" aria-label="Partager la fiche contact">
-          <i class="fa-solid fa-share-nodes"></i>
-        </button>
-      </div>
-    </header>
+            <div class="nav-actions">
+                <div class="nav-label">
+                    Export · Connect · Grow
+                </div>
+                <button class="btn-share" id="shareBtn" title="Partager cette carte"
+                    aria-label="Partager la fiche contact">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </button>
+            </div>
+        </header>
 
-    <!-- Main content card -->
-    <section class="card" id="mainCard">
+        <!-- Main content card -->
+        <section class="card" id="mainCard">
 
-      <!-- Central Logo with Scroll-Driven Scale & Breathing Animation -->
-      <div class="anim-stagger d-1">
-        <div class="logo-container" id="logoContainer">
-          <div class="logo-wrap" id="logoWrap" title="Cliquez pour animer le logo !">
-            <img
-              class="logo"
-              src="./logo.png"
-              alt="Logo Algeria Export Hub"
-            >
-          </div>
-        </div>
-      </div>
+            <!-- Central Logo with Scroll-Driven Scale & Breathing Animation -->
+            <div class="anim-stagger d-1">
+                <div class="logo-container" id="logoContainer">
+                    <div class="logo-wrap" id="logoWrap" title="Cliquez pour animer le logo !">
+                        <img class="logo" src="./logo.png" alt="Logo Algeria Export Hub">
+                    </div>
+                </div>
+            </div>
 
-      <!-- Eyebrow badge -->
-      <div class="anim-stagger d-2">
-        <div class="eyebrow">
-          <i class="fa-solid fa-earth-africa"></i>
-          Made in Algeria · Open to the World
-        </div>
-      </div>
+            <!-- Eyebrow badge -->
+            <div class="anim-stagger d-2">
+                <div class="eyebrow">
+                    <i class="fa-solid fa-earth-africa"></i>
+                    Made in Algeria · Open to the World
+                </div>
+            </div>
 
-      <!-- Main Headline -->
-      <div class="anim-stagger d-3">
-        <h1>
-          Connecter l'Algérie
-          <span>au monde.</span>
-        </h1>
-      </div>
+            <!-- Main Headline -->
+            <div class="anim-stagger d-3">
+                <h1>
+                    Connecter l'Algérie
+                    <span>au monde.</span>
+                </h1>
+            </div>
 
-      <!-- CONTINUOUS SCROLLING LOGO MARQUEE TICKER (BANNER ANIMATION) -->
-      <div class="logo-marquee-section anim-stagger d-3">
-        <div class="marquee-track">
-          <!-- Track Part 1 -->
-          <div class="marquee-badge">
-            <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
-            <span>ALGERIA EXPORT HUB</span>
-          </div>
-          <div class="marquee-badge">
-            <i class="fa-solid fa-star"></i>
-            <span>MADE IN ALGERIA</span>
-          </div>
-          <div class="marquee-badge">
-            <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
-            <span>EXPORT · CONNECT · GROW</span>
-          </div>
-          <div class="marquee-badge">
-            <i class="fa-solid fa-earth-africa"></i>
-            <span>MARCHÉS MONDIAUX</span>
-          </div>
-          <div class="marquee-badge">
-            <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
-            <span>QUALITÉ & EXCELLENCE</span>
-          </div>
+            <!-- CONTINUOUS SCROLLING LOGO MARQUEE TICKER (BANNER ANIMATION) -->
+            <div class="logo-marquee-section anim-stagger d-3">
+                <div class="marquee-track">
+                    <!-- Track Part 1 -->
+                    <div class="marquee-badge">
+                        <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
+                        <span>ALGERIA EXPORT HUB</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <i class="fa-solid fa-star"></i>
+                        <span>MADE IN ALGERIA</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
+                        <span>EXPORT · CONNECT · GROW</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <i class="fa-solid fa-earth-africa"></i>
+                        <span>MARCHÉS MONDIAUX</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
+                        <span>QUALITÉ & EXCELLENCE</span>
+                    </div>
 
-          <!-- Track Part 2 (Exact duplication for seamless infinite scroll) -->
-          <div class="marquee-badge">
-            <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
-            <span>ALGERIA EXPORT HUB</span>
-          </div>
-          <div class="marquee-badge">
-            <i class="fa-solid fa-star"></i>
-            <span>MADE IN ALGERIA</span>
-          </div>
-          <div class="marquee-badge">
-            <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
-            <span>EXPORT · CONNECT · GROW</span>
-          </div>
-          <div class="marquee-badge">
-            <i class="fa-solid fa-earth-africa"></i>
-            <span>MARCHÉS MONDIAUX</span>
-          </div>
-          <div class="marquee-badge">
-            <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
-            <span>QUALITÉ & EXCELLENCE</span>
-          </div>
-        </div>
-      </div>
+                    <!-- Track Part 2 (Exact duplication for seamless infinite scroll) -->
+                    <div class="marquee-badge">
+                        <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
+                        <span>ALGERIA EXPORT HUB</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <i class="fa-solid fa-star"></i>
+                        <span>MADE IN ALGERIA</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
+                        <span>EXPORT · CONNECT · GROW</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <i class="fa-solid fa-earth-africa"></i>
+                        <span>MARCHÉS MONDIAUX</span>
+                    </div>
+                    <div class="marquee-badge">
+                        <img class="marquee-logo-thumb" src="./logo.png" alt="Logo">
+                        <span>QUALITÉ & EXCELLENCE</span>
+                    </div>
+                </div>
+            </div>
 
-      <!-- Subtitle description -->
-      <div class="anim-stagger d-4">
-        <p class="subtitle">
-          Algeria Export Hub accompagne les opportunités
-          d'exportation et met en relation les entreprises
-          avec de nouveaux marchés. Découvrez notre plateforme
-          et prenons contact.
-        </p>
-      </div>
+            <!-- Subtitle description -->
+            <div class="anim-stagger d-4">
+                <p class="subtitle">
+                    Algeria Export Hub accompagne les opportunités
+                    d'exportation et met en relation les entreprises
+                    avec de nouveaux marchés. Découvrez notre plateforme
+                    et prenons contact.
+                </p>
+            </div>
 
-      <!-- Main action buttons -->
-      <div class="actions">
+            <!-- Main action buttons -->
+            <div class="actions">
 
-        <!-- Action #1: Enregistrer dans les contacts (vCard) -->
-        <a
-          class="btn btn-vcard anim-stagger d-5"
-          href="./contact.vcf"
-          download="Algeria_Export_Hub.vcf"
-          id="btnSaveContact"
-        >
-          <i class="fa-solid fa-address-card"></i>
-          Enregistrer dans mes contacts
-        </a>
 
-        <!-- Action #2: WhatsApp direct -->
-        <a
-          class="btn btn-whatsapp anim-stagger d-6"
-          href="https://wa.me/213770371988?text=Bonjour%20Algeria%20Export%20Hub%2C%20je%20souhaite%20avoir%20plus%20d%27informations."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-whatsapp"></i>
-          WhatsApp direct
-        </a>
+                <!-- Action #2: WhatsApp direct -->
+                <a class="btn btn-whatsapp anim-stagger d-6"
+                    href="https://wa.me/213770371988?text=Bonjour%20Algeria%20Export%20Hub%2C%20je%20souhaite%20avoir%20plus%20d%27informations."
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp direct
+                </a>
 
-        <!-- Action #3: Appel direct -->
-        <a
-          class="btn btn-gold anim-stagger d-7"
-          href="tel:+213770371988"
-        >
-          <i class="fa-solid fa-phone"></i>
-          Appeler (+213 770 371 988)
-        </a>
+                <!-- Action #3: Appel direct -->
+                <a class="btn btn-gold anim-stagger d-7" href="tel:+213770371988">
+                    <i class="fa-solid fa-phone"></i>
+                    Appeler (+213 770 371 988)
+                </a>
 
-        <!-- Action #4: Visiter le site web -->
-        <a
-          class="btn btn-primary anim-stagger d-8"
-          href="https://algeriaexporthub.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          Visiter notre site
-        </a>
+                <!-- Action #4: Visiter le site web -->
+                <a class="btn btn-primary anim-stagger d-8" href="https://algeriaexporthub.com/" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    Visiter notre site
+                </a>
 
-        <!-- Action #5: Envoyer un e-mail -->
-        <a
-          class="btn btn-secondary anim-stagger d-9"
-          href="mailto:contact@algeriaexporthub.com"
-        >
-          <i class="fa-regular fa-envelope"></i>
-          Envoyer un e-mail
-        </a>
+                <!-- Action #5: Envoyer un e-mail -->
+                <a class="btn btn-secondary anim-stagger d-9" href="mailto:contact@algeriaexporthub.com">
+                    <i class="fa-regular fa-envelope"></i>
+                    Envoyer un e-mail
+                </a>
 
-      </div>
+            </div>
 
-      <!-- Separator rule -->
-      <div class="rule anim-stagger d-10"></div>
+            <!-- Separator rule -->
+            <div class="rule anim-stagger d-10"></div>
 
-      <!-- Section Title -->
-      <div class="section-title anim-stagger d-10">
-        Coordonnées officielles
-      </div>
+            <!-- Section Title -->
+            <div class="section-title anim-stagger d-10">
+                Coordonnées officielles
+            </div>
 
-      <!-- Contact details -->
-      <div class="contact-grid">
+            <!-- Contact details -->
+            <div class="contact-grid">
 
-        <!-- Mobile direct -->
-        <a class="contact-item anim-stagger d-11" href="tel:+213770371988">
-          <div class="contact-icon">
-            <i class="fa-solid fa-mobile-screen"></i>
-          </div>
-          <div class="contact-body">
-            <small>TÉLÉPHONE DIRECT</small>
-            <span>+213 770 371 988</span>
-          </div>
-          <i class="fa-solid fa-chevron-right contact-action-icon"></i>
-        </a>
+                <!-- Mobile direct -->
+                <a class="contact-item anim-stagger d-11" href="tel:+213770371988">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <div class="contact-body">
+                        <small>TÉLÉPHONE DIRECT</small>
+                        <span>+213 770 371 988</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right contact-action-icon"></i>
+                </a>
 
-        <!-- Standard bureau -->
-        <a class="contact-item anim-stagger d-11" href="tel:+21342373083">
-          <div class="contact-icon">
-            <i class="fa-solid fa-headset"></i>
-          </div>
-          <div class="contact-body">
-            <small>STANDARD BUREAU</small>
-            <span>+213 42 373 083</span>
-          </div>
-          <i class="fa-solid fa-chevron-right contact-action-icon"></i>
-        </a>
+                <!-- Standard bureau -->
+                <a class="contact-item anim-stagger d-11" href="tel:+21342373083">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="contact-body">
+                        <small>STANDARD BUREAU</small>
+                        <span>+213 42 373 083</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right contact-action-icon"></i>
+                </a>
 
-        <!-- E-mail -->
-        <a class="contact-item anim-stagger d-12" href="mailto:contact@algeriaexporthub.com">
-          <div class="contact-icon">
-            <i class="fa-regular fa-envelope"></i>
-          </div>
-          <div class="contact-body">
-            <small>E-MAIL</small>
-            <span>contact@algeriaexporthub.com</span>
-          </div>
-          <i class="fa-solid fa-chevron-right contact-action-icon"></i>
-        </a>
+                <!-- E-mail -->
+                <a class="contact-item anim-stagger d-12" href="mailto:contact@algeriaexporthub.com">
+                    <div class="contact-icon">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="contact-body">
+                        <small>E-MAIL</small>
+                        <span>contact@algeriaexporthub.com</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right contact-action-icon"></i>
+                </a>
 
-        <!-- Adresse physique (Google Maps direct) -->
-        <a
-          class="contact-item anim-stagger d-12"
-          href="https://www.google.com/maps/search/?api=1&query=N%C2%B010+Rue+Kara+Slimane+Kiffane+Tlemcen+13000+Alg%C3%A9rie"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="contact-icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
-          <div class="contact-body">
-            <small>NOTRE ADRESSE (ITINÉRAIRE)</small>
-            <address>
-              N°10 Rue Kara Slimane, Kiffane,
-              Tlemcen 13000, Algérie
-            </address>
-          </div>
-          <i class="fa-solid fa-arrow-up-right-from-square contact-action-icon"></i>
-        </a>
+                <!-- Adresse physique (Google Maps direct) -->
+                <a class="contact-item anim-stagger d-12"
+                    href="https://www.google.com/maps/search/?api=1&query=N%C2%B010+Rue+Kara+Slimane+Kiffane+Tlemcen+13000+Alg%C3%A9rie"
+                    target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-body">
+                        <small>NOTRE ADRESSE (ITINÉRAIRE)</small>
+                        <address>
+                            N°10 Rue Kara Slimane, Kiffane,
+                            Tlemcen 13000, Algérie
+                        </address>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-from-square contact-action-icon"></i>
+                </a>
 
-      </div>
+            </div>
 
-      <!-- Social links -->
-      <div class="socials">
+            <!-- Social links -->
+            <div class="socials">
 
-        <a
-          class="social anim-stagger d-13"
-          href="https://www.linkedin.com/company/algeriaexporthub"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-linkedin-in"></i>
-          LinkedIn
-        </a>
+                <a class="social anim-stagger d-13" href="https://www.linkedin.com/company/algeriaexporthub"
+                    target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    LinkedIn
+                </a>
 
-        <a
-          class="social anim-stagger d-13"
-          href="https://www.facebook.com/algeriaexporthub"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-facebook-f"></i>
-          Facebook
-        </a>
+                <a class="social anim-stagger d-13" href="https://www.facebook.com/algeriaexporthub" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    Facebook
+                </a>
 
-        <a
-          class="social anim-stagger d-14"
-          href="https://www.youtube.com/@AlgeriaExportHub"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-youtube"></i>
-          YouTube
-        </a>
+                <a class="social anim-stagger d-14" href="https://www.youtube.com/@AlgeriaExportHub" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-youtube"></i>
+                    YouTube
+                </a>
 
-      </div>
+            </div>
 
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <span>
-        © 2026 <strong>Algeria Export Hub</strong>
-        · Tous droits réservés · by
-        <a
-          href="https://www.digitalagencey.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="agency-link"
-          title="Digital Agency — Web Development & UI/UX Design"
-        >
-          <strong>Digital Agency</strong>
-        </a>
-      </span>
+        <!-- Footer -->
+        <footer class="footer">
+            <span>
+                © 2026 <strong>Algeria Export Hub</strong>
+                · Tous droits réservés · by
+                <a href="https://www.digitalagencey.com/" target="_blank" rel="noopener noreferrer" class="agency-link"
+                    title="Digital Agency — Web Development & UI/UX Design">
+                    <strong>Digital Agency</strong>
+                </a>
+            </span>
 
-      <span>
-        Développé avec soin en Algérie
-        <i class="fa-solid fa-heart heart"></i>
-      </span>
-    </footer>
+            <span>
+                Développé avec soin en Algérie
+                <i class="fa-solid fa-heart heart"></i>
+            </span>
+        </footer>
 
-  </main>
+    </main>
 
-  <!-- Toast notification -->
-  <div id="toast" class="toast">
-    <i class="fa-solid fa-circle-check"></i>
-    <span id="toastMsg">Lien copié dans le presse-papier !</span>
-  </div>
+    <!-- Toast notification -->
+    <div id="toast" class="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMsg">Lien copié dans le presse-papier !</span>
+    </div>
 
-  <script>
-    // ========================================================
-    // INTERACTIVE TRADE NETWORK BACKGROUND CANVAS ANIMATION
-    // (Connecting Algeria to the World)
-    // ========================================================
-    (function initNetworkBackground() {
-      const canvas = document.getElementById('networkCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
+    <script>
+        // ========================================================
+        // INTERACTIVE TRADE NETWORK BACKGROUND CANVAS ANIMATION
+        // (Connecting Algeria to the World)
+        // ========================================================
+        (function initNetworkBackground() {
+            const canvas = document.getElementById('networkCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
 
-      let width = 0;
-      let height = 0;
-      let particles = [];
-      let mouse = { x: -1000, y: -1000, active: false };
-      let animFrameId = null;
+            let width = 0;
+            let height = 0;
+            let particles = [];
+            let mouse = { x: -1000, y: -1000, active: false };
+            let animFrameId = null;
 
-      function resizeCanvas() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-      }
-
-      window.addEventListener('resize', () => {
-        resizeCanvas();
-        createParticles();
-      });
-
-      // Track cursor or touch
-      window.addEventListener('mousemove', (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-        mouse.active = true;
-      });
-
-      window.addEventListener('mouseleave', () => {
-        mouse.active = false;
-      });
-
-      window.addEventListener('touchmove', (e) => {
-        if (e.touches && e.touches[0]) {
-          mouse.x = e.touches[0].clientX;
-          mouse.y = e.touches[0].clientY;
-          mouse.active = true;
-        }
-      }, { passive: true });
-
-      window.addEventListener('touchend', () => {
-        mouse.active = false;
-      });
-
-      function createParticles() {
-        particles = [];
-        // Particle count scaled to screen size for optimal performance
-        const count = Math.min(Math.floor((width * height) / 22000), 45);
-
-        for (let i = 0; i < count; i++) {
-          const isGold = Math.random() > 0.45;
-          particles.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.45,
-            vy: (Math.random() - 0.5) * 0.45,
-            radius: Math.random() * 2 + 1.2,
-            baseAlpha: Math.random() * 0.35 + 0.15,
-            color: isGold ? '197, 160, 74' : '7, 91, 65' // Gold or Green
-          });
-        }
-      }
-
-      function updateAndDraw() {
-        ctx.clearRect(0, 0, width, height);
-
-        const connectionDist = 120;
-        const mouseDist = 140;
-
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-          const p1 = particles[i];
-
-          // Move
-          p1.x += p1.vx;
-          p1.y += p1.vy;
-
-          // Bounce off borders smoothly
-          if (p1.x < 0) { p1.x = 0; p1.vx *= -1; }
-          else if (p1.x > width) { p1.x = width; p1.vx *= -1; }
-          if (p1.y < 0) { p1.y = 0; p1.vy *= -1; }
-          else if (p1.y > height) { p1.y = height; p1.vy *= -1; }
-
-          // Connect with other particles
-          for (let j = i + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const dx = p1.x - p2.x;
-            const dy = p1.y - p2.y;
-            const dist = Math.hypot(dx, dy);
-
-            if (dist < connectionDist) {
-              const alpha = (1 - dist / connectionDist) * 0.22;
-              ctx.beginPath();
-              ctx.moveTo(p1.x, p1.y);
-              ctx.lineTo(p2.y, p2.y);
-              ctx.strokeStyle = `rgba(197, 160, 74, ${alpha})`;
-              ctx.lineWidth = 0.8;
-              ctx.stroke();
+            function resizeCanvas() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
             }
-          }
 
-          // Gentle interaction with cursor
-          if (mouse.active) {
-            const mdx = p1.x - mouse.x;
-            const mdy = p1.y - mouse.y;
-            const mdist = Math.hypot(mdx, mdy);
-            if (mdist < mouseDist) {
-              const mAlpha = (1 - mdist / mouseDist) * 0.35;
-              ctx.beginPath();
-              ctx.moveTo(p1.x, p1.y);
-              ctx.lineTo(mouse.x, mouse.y);
-              ctx.strokeStyle = `rgba(7, 91, 65, ${mAlpha})`;
-              ctx.lineWidth = 1;
-              ctx.stroke();
-
-              // Subtle push away from cursor
-              p1.x += (mdx / mdist) * 0.4;
-              p1.y += (mdy / mdist) * 0.4;
-            }
-          }
-
-          // Draw node particle
-          ctx.beginPath();
-          ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${p1.color}, ${p1.baseAlpha})`;
-          ctx.fill();
-        }
-
-        animFrameId = requestAnimationFrame(updateAndDraw);
-      }
-
-      // Handle visibility pause to preserve battery
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          if (animFrameId) cancelAnimationFrame(animFrameId);
-        } else {
-          animFrameId = requestAnimationFrame(updateAndDraw);
-        }
-      });
-
-      resizeCanvas();
-      createParticles();
-      updateAndDraw();
-    })();
-
-    // SCROLL ANIMATIONS (LOGO SCALE & PARALLAX + STICKY NAV)
-    const logoContainer = document.getElementById('logoContainer');
-    const stickyNav = document.getElementById('stickyNav');
-
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY || window.pageYOffset;
-
-      // 1. Logo Scale & Parallax on scroll
-      if (logoContainer) {
-        const scaleVal = Math.max(0.68, 1 - (scrolled * 0.0011));
-        const translateY = Math.min(scrolled * 0.22, 55);
-        const opacityVal = Math.max(0.4, 1 - (scrolled * 0.0018));
-
-        logoContainer.style.transform = `translateY(${translateY}px) scale(${scaleVal})`;
-        logoContainer.style.opacity = opacityVal;
-      }
-
-      // 2. Sticky Nav Transformation
-      if (stickyNav) {
-        if (scrolled > 40) {
-          stickyNav.classList.add('nav-scrolled');
-        } else {
-          stickyNav.classList.remove('nav-scrolled');
-        }
-      }
-    }, { passive: true });
-
-    // INTERACTIVE LOGO CLICK (POP ANIMATION)
-    const logoWrap = document.getElementById('logoWrap');
-    if (logoWrap) {
-      logoWrap.addEventListener('click', () => {
-        logoWrap.classList.add('logo-pop');
-        setTimeout(() => {
-          logoWrap.classList.remove('logo-pop');
-        }, 700);
-      });
-    }
-
-    // Ripple effect on click/touch for buttons and cards
-    function createRipple(e) {
-      const target = e.currentTarget;
-      const rect = target.getBoundingClientRect();
-      const circle = document.createElement('span');
-      const diameter = Math.max(rect.width, rect.height);
-      const radius = diameter / 2;
-
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${(e.clientX || (e.touches && e.touches[0].clientX) || (rect.left + radius)) - rect.left - radius}px`;
-      circle.style.top = `${(e.clientY || (e.touches && e.touches[0].clientY) || (rect.top + radius)) - rect.top - radius}px`;
-      circle.classList.add('ripple');
-
-      const existing = target.getElementsByClassName('ripple')[0];
-      if (existing) {
-        existing.remove();
-      }
-
-      target.appendChild(circle);
-      setTimeout(() => circle.remove(), 600);
-    }
-
-    document.querySelectorAll('.btn, .contact-item, .social, .btn-share').forEach(el => {
-      el.addEventListener('pointerdown', createRipple);
-    });
-
-    // 3D subtle card tilt on desktop
-    const card = document.getElementById('mainCard');
-    if (window.matchMedia('(min-width: 820px)').matches && card) {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -3.5;
-        const rotateY = ((x - centerX) / centerX) * 3.5;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-      });
-    }
-
-    // Toast notification helper
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMsg');
-      if (toast && toastMsg) {
-        toastMsg.textContent = message;
-        toast.classList.add('show');
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 3200);
-      }
-    }
-
-    // Share contact card via Web Share API or copy link
-    const shareBtn = document.getElementById('shareBtn');
-    if (shareBtn) {
-      shareBtn.addEventListener('click', async () => {
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: 'Algeria Export Hub',
-              text: 'Fiche contact de Algeria Export Hub - Connecter l\'Algérie au monde',
-              url: window.location.href
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                createParticles();
             });
-          } catch (err) {
-            // Cancelled
-          }
-        } else {
-          try {
-            await navigator.clipboard.writeText(window.location.href);
-            showToast('Lien de la carte copié !');
-          } catch (err) {
-            showToast('Partage non disponible');
-          }
-        }
-      });
-    }
 
-    // Dynamic vCard fallback handler for mobile browsers
-    const btnSaveContact = document.getElementById('btnSaveContact');
-    if (btnSaveContact) {
-      btnSaveContact.addEventListener('click', function(e) {
-        if (window.location.protocol === 'file:') {
-          e.preventDefault();
-          const vcardData = `BEGIN:VCARD\r\nVERSION:3.0\r\nFN:Algeria Export Hub\r\nORG:Algeria Export Hub\r\nTITLE:Hub d'exportation & Connexion internationale\r\nTEL;TYPE=CELL,VOICE:+213770371988\r\nTEL;TYPE=WORK,VOICE:+21342373083\r\nEMAIL;TYPE=INTERNET,WORK:contact@algeriaexporthub.com\r\nURL:https://algeriaexporthub.com/\r\nADR;TYPE=WORK:;;N°10 Rue Kara Slimane, Kiffane;Tlemcen;;13000;Algérie\r\nNOTE:Connecter l'Algérie au monde. Plateforme d'accompagnement à l'exportation.\r\nEND:VCARD`;
-          const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
-          const url = URL.createObjectURL(blob);
-          const tempLink = document.createElement('a');
-          tempLink.href = url;
-          tempLink.setAttribute('download', 'Algeria_Export_Hub.vcf');
-          document.body.appendChild(tempLink);
-          tempLink.click();
-          document.body.removeChild(tempLink);
-          setTimeout(() => URL.revokeObjectURL(url), 2000);
-          showToast('Fichier contact téléchargé !');
-        } else {
-          showToast('Téléchargement du contact...');
+            // Track cursor or touch
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+                mouse.active = true;
+            });
+
+            window.addEventListener('mouseleave', () => {
+                mouse.active = false;
+            });
+
+            window.addEventListener('touchmove', (e) => {
+                if (e.touches && e.touches[0]) {
+                    mouse.x = e.touches[0].clientX;
+                    mouse.y = e.touches[0].clientY;
+                    mouse.active = true;
+                }
+            }, { passive: true });
+
+            window.addEventListener('touchend', () => {
+                mouse.active = false;
+            });
+
+            function createParticles() {
+                particles = [];
+                // Particle count scaled to screen size for optimal performance
+                const count = Math.min(Math.floor((width * height) / 22000), 45);
+
+                for (let i = 0; i < count; i++) {
+                    const isGold = Math.random() > 0.45;
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.45,
+                        vy: (Math.random() - 0.5) * 0.45,
+                        radius: Math.random() * 2 + 1.2,
+                        baseAlpha: Math.random() * 0.35 + 0.15,
+                        color: isGold ? '197, 160, 74' : '7, 91, 65' // Gold or Green
+                    });
+                }
+            }
+
+            function updateAndDraw() {
+                ctx.clearRect(0, 0, width, height);
+
+                const connectionDist = 120;
+                const mouseDist = 140;
+
+                // Draw connections
+                for (let i = 0; i < particles.length; i++) {
+                    const p1 = particles[i];
+
+                    // Move
+                    p1.x += p1.vx;
+                    p1.y += p1.vy;
+
+                    // Bounce off borders smoothly
+                    if (p1.x < 0) { p1.x = 0; p1.vx *= -1; }
+                    else if (p1.x > width) { p1.x = width; p1.vx *= -1; }
+                    if (p1.y < 0) { p1.y = 0; p1.vy *= -1; }
+                    else if (p1.y > height) { p1.y = height; p1.vy *= -1; }
+
+                    // Connect with other particles
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const dist = Math.hypot(dx, dy);
+
+                        if (dist < connectionDist) {
+                            const alpha = (1 - dist / connectionDist) * 0.22;
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.y, p2.y);
+                            ctx.strokeStyle = `rgba(197, 160, 74, ${alpha})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+
+                    // Gentle interaction with cursor
+                    if (mouse.active) {
+                        const mdx = p1.x - mouse.x;
+                        const mdy = p1.y - mouse.y;
+                        const mdist = Math.hypot(mdx, mdy);
+                        if (mdist < mouseDist) {
+                            const mAlpha = (1 - mdist / mouseDist) * 0.35;
+                            ctx.beginPath();
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(mouse.x, mouse.y);
+                            ctx.strokeStyle = `rgba(7, 91, 65, ${mAlpha})`;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+
+                            // Subtle push away from cursor
+                            p1.x += (mdx / mdist) * 0.4;
+                            p1.y += (mdy / mdist) * 0.4;
+                        }
+                    }
+
+                    // Draw node particle
+                    ctx.beginPath();
+                    ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${p1.color}, ${p1.baseAlpha})`;
+                    ctx.fill();
+                }
+
+                animFrameId = requestAnimationFrame(updateAndDraw);
+            }
+
+            // Handle visibility pause to preserve battery
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    if (animFrameId) cancelAnimationFrame(animFrameId);
+                } else {
+                    animFrameId = requestAnimationFrame(updateAndDraw);
+                }
+            });
+
+            resizeCanvas();
+            createParticles();
+            updateAndDraw();
+        })();
+
+        // SCROLL ANIMATIONS (LOGO SCALE & PARALLAX + STICKY NAV)
+        const logoContainer = document.getElementById('logoContainer');
+        const stickyNav = document.getElementById('stickyNav');
+
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY || window.pageYOffset;
+
+            // 1. Logo Scale & Parallax on scroll
+            if (logoContainer) {
+                const scaleVal = Math.max(0.68, 1 - (scrolled * 0.0011));
+                const translateY = Math.min(scrolled * 0.22, 55);
+                const opacityVal = Math.max(0.4, 1 - (scrolled * 0.0018));
+
+                logoContainer.style.transform = `translateY(${translateY}px) scale(${scaleVal})`;
+                logoContainer.style.opacity = opacityVal;
+            }
+
+            // 2. Sticky Nav Transformation
+            if (stickyNav) {
+                if (scrolled > 40) {
+                    stickyNav.classList.add('nav-scrolled');
+                } else {
+                    stickyNav.classList.remove('nav-scrolled');
+                }
+            }
+        }, { passive: true });
+
+        // INTERACTIVE LOGO CLICK (POP ANIMATION)
+        const logoWrap = document.getElementById('logoWrap');
+        if (logoWrap) {
+            logoWrap.addEventListener('click', () => {
+                logoWrap.classList.add('logo-pop');
+                setTimeout(() => {
+                    logoWrap.classList.remove('logo-pop');
+                }, 700);
+            });
         }
-      });
-    }
-  </script>
+
+        // Ripple effect on click/touch for buttons and cards
+        function createRipple(e) {
+            const target = e.currentTarget;
+            const rect = target.getBoundingClientRect();
+            const circle = document.createElement('span');
+            const diameter = Math.max(rect.width, rect.height);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${(e.clientX || (e.touches && e.touches[0].clientX) || (rect.left + radius)) - rect.left - radius}px`;
+            circle.style.top = `${(e.clientY || (e.touches && e.touches[0].clientY) || (rect.top + radius)) - rect.top - radius}px`;
+            circle.classList.add('ripple');
+
+            const existing = target.getElementsByClassName('ripple')[0];
+            if (existing) {
+                existing.remove();
+            }
+
+            target.appendChild(circle);
+            setTimeout(() => circle.remove(), 600);
+        }
+
+        document.querySelectorAll('.btn, .contact-item, .social, .btn-share').forEach(el => {
+            el.addEventListener('pointerdown', createRipple);
+        });
+
+        // 3D subtle card tilt on desktop
+        const card = document.getElementById('mainCard');
+        if (window.matchMedia('(min-width: 820px)').matches && card) {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -3.5;
+                const rotateY = ((x - centerX) / centerX) * 3.5;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            });
+        }
+
+        // Toast notification helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            if (toast && toastMsg) {
+                toastMsg.textContent = message;
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3200);
+            }
+        }
+
+        // Share contact card via Web Share API or copy link
+        const shareBtn = document.getElementById('shareBtn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Algeria Export Hub',
+                            text: 'Fiche contact de Algeria Export Hub - Connecter l\'Algérie au monde',
+                            url: window.location.href
+                        });
+                    } catch (err) {
+                        // Cancelled
+                    }
+                } else {
+                    try {
+                        await navigator.clipboard.writeText(window.location.href);
+                        showToast('Lien de la carte copié !');
+                    } catch (err) {
+                        showToast('Partage non disponible');
+                    }
+                }
+            });
+        }
+
+    </script>
 </body>
+
 </html>
